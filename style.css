@@ -23,8 +23,8 @@ h2{font-size:clamp(27px,3.2vw,38px);}
 /* HEADER */
 header{position:sticky;top:0;z-index:50;background:rgba(236,239,238,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
 .navrow{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1180px;margin:0 auto;gap:14px;}
-.brand{display:flex;align-items:center;gap:1px;font-family:var(--display);font-weight:800;font-size:19px;}
-.brand-mark{width:23px;height:23px;flex:none;position:relative;top:1px;}
+.brand{display:flex;align-items:center;}
+.brand svg{height:26px;width:auto;display:block;}
 .nav-right{display:flex;align-items:center;gap:16px;margin-left:auto;}
 nav{display:none;gap:26px;align-items:center;}
 @media(min-width:980px){nav{display:flex;}}
