@@ -247,7 +247,17 @@ footer{border-top:1px solid var(--line);padding:36px 0 26px;}
         <button class="lang-btn active" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="de">DE</button>
       </div>
-      <a href="#audit" class="btn btn-primary nav-cta" data-en="Book Your Free Audit" data-de="Kostenlosen Audit buchen">Book Your Free Audit</a>
+      <a
+href="#"
+class="btn btn-primary nav-cta"
+data-en="Book Free Consultation"
+data-de="Kostenlose Beratung buchen"
+data-cal-link="qevilo/30min"
+data-cal-namespace="30min"
+data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+>
+Book Free Consultation
+</a>
     </div>
   </div>
 </header>
@@ -403,8 +413,8 @@ footer{border-top:1px solid var(--line);padding:36px 0 26px;}
       <div class="final-grid">
         <div>
           <div class="eyebrow" data-en="LET'S BUILD YOUR DIGITAL ADVANTAGE" data-de="LASSEN SIE UNS IHREN VORTEIL AUFBAUEN">LET'S BUILD YOUR DIGITAL ADVANTAGE</div>
-          <h2 data-en="Not sure which service you need?" data-de="Nicht sicher, welche Leistung Sie brauchen?">Not sure which service you need?</h2>
-          <p class="final-intro" data-en="That's exactly what the audit is for. We'll review your setup and tell you where to start — no strings attached." data-de="Genau dafür ist das Audit da. Wir prüfen Ihre Situation und sagen Ihnen, wo Sie anfangen sollten — ganz ohne Verpflichtung.">That's exactly what the audit is for. We'll review your setup and tell you where to start — no strings attached.</p>
+          <h2 data-en="Book Your Free Consultation" data-de="Buchen Sie Ihre kostenlose Beratung">Book Your Free Consultation</h2>
+          <p class="final-intro" data-en="Book a free 30-minute consultation with Qevilo. We'll discuss your business challenges and recommend the best solution for your needs." data-de="Genau dafür ist das Audit da. Wir prüfen Ihre Situation und sagen Ihnen, wo Sie anfangen sollten — ganz ohne Verpflichtung.">Book a free 30-minute consultation with Qevilo. We'll discuss your business challenges and recommend the best solution for your needs.</p>
           <ul class="checklist">
             <li><span class="ck">→</span><span data-en="Full UX review of your current website" data-de="Vollständige UX-Prüfung Ihrer aktuellen Webseite">Full UX review of your current website</span></li>
             <li><span class="ck">→</span><span data-en="Assessment of up to two admin bottlenecks" data-de="Bewertung von bis zu zwei Verwaltungsengpässen">Assessment of up to two admin bottlenecks</span></li>
@@ -437,7 +447,15 @@ footer{border-top:1px solid var(--line);padding:36px 0 26px;}
                 <div class="slot" data-en-slot="Thu 16.07 · 11:00" data-de-slot="Do 16.07 · 11:00">Thu 11:00</div>
               </div>
             </div>
-            <button type="submit" class="submit-btn" data-en="Secure My Audit →" data-de="Audit jetzt sichern →">Secure My Audit →</button>
+            <button
+type="button"
+class="submit-btn"
+data-cal-link="qevilo/30min"
+data-cal-namespace="30min"
+data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+>
+Book Free Consultation →
+</button>
             <div class="form-note" data-en="No sales pressure. No obligation. Response within 24 hours." data-de="Kein Verkaufsdruck. Keine Verpflichtung. Antwort innerhalb von 24 Stunden.">No sales pressure. No obligation. Response within 24 hours.</div>
           </form>
           <div class="confirm" id="confirmBox">
@@ -559,6 +577,49 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 });
 
+</script>
+  <!-- Cal.com -->
+<script type="text/javascript">
+(function (C, A, L) {
+  let p = function (a, ar) { a.q.push(ar); };
+  let d = C.document;
+  C.Cal = C.Cal || function () {
+    let cal = C.Cal;
+    let ar = arguments;
+    if (!cal.loaded) {
+      cal.ns = {};
+      cal.q = cal.q || [];
+      d.head.appendChild(d.createElement("script")).src = A;
+      cal.loaded = true;
+    }
+    if (ar[0] === L) {
+      const api = function () { p(api, arguments); };
+      const namespace = ar[1];
+      api.q = api.q || [];
+      if (typeof namespace === "string") {
+        cal.ns[namespace] = cal.ns[namespace] || api;
+        p(cal.ns[namespace], ar);
+        p(cal, ["initNamespace", namespace]);
+      } else {
+        p(cal, ar);
+      }
+      return;
+    }
+    p(cal, ar);
+  };
+})(window, "https://app.cal.eu/embed/embed.js", "init");
+
+Cal("init", "30min", {
+  origin: "https://app.cal.eu"
+});
+
+Cal.config = Cal.config || {};
+Cal.config.forwardQueryParams = true;
+
+Cal.ns["30min"]("ui", {
+  hideEventTypeDetails: false,
+  layout: "month_view"
+});
 </script>
 </body>
 </html>
