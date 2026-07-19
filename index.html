@@ -435,51 +435,43 @@ footer{border-top:1px solid var(--line);padding:36px 0 26px;}
             <li><span class="ck">→</span><span data-en="An actionable blueprint — yours to keep, zero obligation" data-de="Ein umsetzbarer Plan — für Sie, ganz ohne Verpflichtung">An actionable blueprint — yours to keep, zero obligation</span></li>
           </ul>
         </div>
-        <div class="form-panel">
-          <form id="auditForm">
-            <div class="field-row">
-              <div class="field"><label data-en="Name" data-de="Name">Name</label><input id="fname" type="text" required data-en-ph="Full name" data-de-ph="Vor- und Nachname" placeholder="Full name"></div>
-              <div class="field"><label data-en="Company Name" data-de="Unternehmen">Company Name</label><input id="fcompany" type="text" required data-en-ph="Your company" data-de-ph="Firmenname" placeholder="Your company"></div>
-            </div>
-            <div class="field">
-              <label data-en="Current Biggest Tech/Admin Pain Point" data-de="Größte aktuelle Herausforderung">Current Biggest Tech/Admin Pain Point</label>
-              <select id="fpain" required>
-                <option value="" data-en="Select one..." data-de="Bitte wählen...">Select one...</option>
-                <option data-en="Outdated Website" data-de="Veraltete Webseite">Outdated Website</option>
-                <option data-en="Manual Data Entry" data-de="Manuelle Dateneingabe">Manual Data Entry</option>
-                <option data-en="Disconnected Software" data-de="Getrennte Software-Tools">Disconnected Software</option>
-                <option data-en="Low Visibility / SEO" data-de="Geringe Sichtbarkeit / SEO">Low Visibility / SEO</option>
-                <option data-en="Other" data-de="Sonstiges">Other</option>
-              </select>
-            </div>
-            <div class="field"><label data-en="Email Address" data-de="E-Mail-Adresse">Email Address</label><input id="femail" type="email" required data-en-ph="name@company.com" data-de-ph="name@firma.de" placeholder="name@company.com"></div>
-            <div class="field">
-              <label data-en="Preferred Slot (optional)" data-de="Wunschtermin (optional)">Preferred Slot (optional)</label>
-              <div class="slot-grid">
-                <div class="slot" data-en-slot="Tue 14.07 · 10:00" data-de-slot="Di 14.07 · 10:00">Tue 10:00</div>
-                <div class="slot" data-en-slot="Wed 15.07 · 14:00" data-de-slot="Mi 15.07 · 14:00">Wed 14:00</div>
-                <div class="slot" data-en-slot="Thu 16.07 · 11:00" data-de-slot="Do 16.07 · 11:00">Thu 11:00</div>
-              </div>
-            </div>
-           <button
-type="button"
-class="submit-btn"
-data-cal-link="qevilo/30min"
-data-cal-namespace="30min"
-data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
->
-Book Free Consultation →
-</button>
-            <div class="form-note" data-en="No sales pressure. No obligation. Response within 24 hours." data-de="Kein Verkaufsdruck. Keine Verpflichtung. Antwort innerhalb von 24 Stunden.">No sales pressure. No obligation. Response within 24 hours.</div>
-          </form>
-          <div class="confirm" id="confirmBox">
-            <div class="check">✓</div>
-            <h4 data-en="Audit request received." data-de="Anfrage erhalten.">Audit request received.</h4>
-            <p id="confirmText" data-en="We'll confirm your slot by email within 24 hours." data-de="Wir bestätigen Ihren Termin per E-Mail innerhalb von 24 Stunden.">We'll confirm your slot by email within 24 hours.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="consultation-panel bracket">
+  <div class="panel-label"
+       data-en="FREE · 30 MINUTES"
+       data-de="KOSTENLOS · 30 MINUTEN">
+    FREE · 30 MINUTES
+  </div>
+
+  <h3
+    data-en="Find the right starting point for your business."
+    data-de="Finden Sie den richtigen Ausgangspunkt für Ihr Unternehmen.">
+    Find the right starting point for your business.
+  </h3>
+
+  <p
+    data-en="Choose a convenient time in our calendar. Cal.com will collect the details needed for the consultation and send your confirmation."
+    data-de="Wählen Sie einen passenden Termin in unserem Kalender. Cal.com erfasst die benötigten Angaben und sendet Ihnen die Bestätigung.">
+    Choose a convenient time in our calendar. Cal.com will collect the details needed for the consultation and send your confirmation.
+  </p>
+
+  <button
+    type="button"
+    class="consultation-btn"
+    data-cal-link="qevilo/30min"
+    data-cal-namespace="30min"
+    data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+    data-en="Book Free Consultation →"
+    data-de="Kostenlose Beratung buchen →">
+    Book Free Consultation →
+  </button>
+
+  <div
+    class="consultation-note"
+    data-en="No sales pressure. No obligation."
+    data-de="Kein Verkaufsdruck. Keine Verpflichtung.">
+    No sales pressure. No obligation.
+  </div>
+</div>
   </section>
 
 </main>
