@@ -183,35 +183,34 @@ nav a:hover, nav a.active{color:var(--teal);}
 .notify-form button{padding:10px 16px;background:var(--ink);color:var(--paper);border:none;font-family:var(--mono);font-size:12.5px;cursor:pointer;}
 .notify-form button:hover{background:var(--teal);}
 
-/* FINAL CTA / FORM */
+/* FINAL CTA / CAL.COM BOOKING */
 .final-cta{background:var(--ink);color:var(--paper);}
-.final-grid{display:grid;grid-template-columns:1fr;gap:0;padding:64px 0;}
-@media(min-width:940px){.final-grid{grid-template-columns:.95fr 1.05fr;gap:50px;}}
+.final-grid{display:grid;grid-template-columns:1fr;gap:34px;padding:64px 0;}
+@media(min-width:940px){.final-grid{grid-template-columns:.82fr 1.18fr;gap:50px;align-items:start;}}
 .final-cta h2{color:#fff;max-width:18ch;}
 .final-cta .eyebrow{color:#7FC4C0;}
 .final-cta .eyebrow::before{background:#7FC4C0;}
 .final-intro{color:#B7BBC0;font-size:15px;margin:16px 0 22px;max-width:44ch;}
 .checklist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
 .checklist li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#E6E8E6;}
-.checklist li .ck{color:var(--teal);font-family:var(--mono);flex:none;}
-.form-panel{background:var(--paper);color:var(--ink);padding:32px 28px;}
-.field{margin-bottom:15px;}
-.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:7px;}
-.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid var(--line-strong);background:var(--paper);font-family:var(--body);font-size:14.5px;color:var(--ink);}
-.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal);}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px;}
-.slot{font-family:var(--mono);font-size:12px;padding:9px 6px;text-align:center;border:1px solid var(--line-strong);cursor:pointer;background:var(--paper);transition:all .12s;}
-.slot:hover{border-color:var(--teal);}
-.slot.active{background:var(--teal);color:#fff;border-color:var(--teal);}
-.submit-btn{width:100%;padding:14px;background:var(--ink);color:var(--paper);border:none;font-family:var(--mono);font-size:13px;letter-spacing:.04em;cursor:pointer;margin-top:4px;transition:background .15s;}
-.submit-btn:hover{background:var(--teal);}
-.form-note{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);margin-top:12px;}
-.confirm{display:none;text-align:center;padding:30px 10px;}
-.confirm.show{display:block;}
-.confirm .check{width:42px;height:42px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:19px;}
-.confirm h4{font-family:var(--display);font-size:18px;margin:0 0 8px;}
-.confirm p{color:var(--ink-soft);font-size:13.5px;}
+.checklist li .ck{color:#7FC4C0;font-family:var(--mono);flex:none;}
+.cal-panel{background:var(--paper);color:var(--ink);border:1px solid #32353A;min-height:680px;overflow:hidden;}
+.cal-panel-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.cal-panel-head h3{font-size:17px;}
+.cal-panel-meta{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--teal);}
+.cal-inline{width:100%;min-height:620px;overflow:auto;}
+.cal-inline iframe{min-height:620px!important;}
+.cal-trigger{appearance:none;}
+@media(max-width:719px){
+  .cal-trigger{width:100%;text-align:center;}
+  .cal-panel{min-height:720px;}
+  .cal-inline,.cal-inline iframe{min-height:660px!important;}
+}
+@media(max-width:520px){
+  .final-grid{padding:50px 0;}
+  .cal-panel-head{padding:17px 16px;}
+  .cal-panel{margin-left:-12px;margin-right:-12px;}
+}
 
 footer{border-top:1px solid var(--line);padding:36px 0 26px;}
 .foot-grid{display:grid;grid-template-columns:1fr;gap:26px;}
@@ -247,7 +246,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 26px;}
         <button class="lang-btn active" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="de">DE</button>
       </div>
-      <a href="#audit" class="btn btn-primary nav-cta" data-en="Book Your Free Audit" data-de="Kostenlosen Audit buchen">Book Your Free Audit</a>
+      <button type="button" class="btn btn-primary nav-cta cal-trigger" data-cal-link="qevilo/30min" data-cal-namespace="qevilo-consultation" data-cal-config='{"layout":"month_view"}' data-en="Book Free Consultation" data-de="Kostenlose Beratung buchen">Book Free Consultation</button>
     </div>
   </div>
 </header>
@@ -265,7 +264,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 26px;}
         </h1>
         <p class="lead" data-en="We eliminate administrative bottlenecks, design high-converting digital interfaces, and automate your workflows with technical precision — built for small teams, not corporate budgets." data-de="Wir beseitigen administrative Engpässe, gestalten konversionsstarke digitale Oberflächen und automatisieren Ihre Abläufe mit technischer Präzision — für kleine Teams, nicht für Konzernbudgets.">We eliminate administrative bottlenecks, design high-converting digital interfaces, and automate your workflows with technical precision — built for small teams, not corporate budgets.</p>
         <div class="hero-ctas">
-          <a href="#audit" class="btn btn-primary" data-en="Book Your Free Audit" data-de="Kostenlosen Audit buchen">Book Your Free Audit</a>
+          <button type="button" class="btn btn-primary cal-trigger" data-cal-link="qevilo/30min" data-cal-namespace="qevilo-consultation" data-cal-config='{"layout":"month_view"}' data-en="Book Free Consultation" data-de="Kostenlose Beratung buchen">Book Free Consultation</button>
           <a href="services.html" class="btn btn-ghost" data-en="View Our Services" data-de="Leistungen ansehen">View Our Services</a>
         </div>
         <div class="spec-strip">
@@ -401,53 +400,31 @@ footer{border-top:1px solid var(--line);padding:36px 0 26px;}
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section id="audit" class="final-cta">
+  <!-- APPOINTMENT BOOKING -->
+  <section id="appointment" class="final-cta">
     <div class="wrap">
       <div class="final-grid">
         <div>
-          <div class="eyebrow" data-en="LET'S BUILD YOUR DIGITAL ADVANTAGE" data-de="LASSEN SIE UNS IHREN VORTEIL AUFBAUEN">LET'S BUILD YOUR DIGITAL ADVANTAGE</div>
-          <h2 data-en="Request a complimentary 30-minute digital audit." data-de="Kostenloses 30-minütiges Digital-Audit anfragen.">Request a complimentary 30-minute digital audit.</h2>
-          <p class="final-intro" data-en="We'll review your setup and hand you a concrete plan — no strings attached." data-de="Wir prüfen Ihre Situation und liefern Ihnen einen konkreten Plan — ganz ohne Verpflichtung.">We'll review your setup and hand you a concrete plan — no strings attached.</p>
+          <div class="eyebrow" data-en="BOOK A FREE CONSULTATION" data-de="KOSTENLOSE BERATUNG BUCHEN">BOOK A FREE CONSULTATION</div>
+          <h2 data-en="Choose a time for your complimentary 30-minute consultation." data-de="Wählen Sie einen Termin für Ihre kostenlose 30-minütige Beratung.">Choose a time for your complimentary 30-minute consultation.</h2>
+          <p class="final-intro" data-en="Tell us what is slowing your business down. We'll discuss practical ways to simplify operations, improve your digital presence, and create a clear next step." data-de="Erzählen Sie uns, was Ihr Unternehmen ausbremst. Wir besprechen praktische Wege, Abläufe zu vereinfachen, Ihre digitale Präsenz zu verbessern und einen klaren nächsten Schritt zu definieren.">Tell us what is slowing your business down. We'll discuss practical ways to simplify operations, improve your digital presence, and create a clear next step.</p>
           <ul class="checklist">
-            <li><span class="ck">→</span><span data-en="Full UX review of your current website" data-de="Vollständige UX-Prüfung Ihrer aktuellen Webseite">Full UX review of your current website</span></li>
-            <li><span class="ck">→</span><span data-en="Assessment of up to two admin bottlenecks" data-de="Bewertung von bis zu zwei Verwaltungsengpässen">Assessment of up to two admin bottlenecks</span></li>
-            <li><span class="ck">→</span><span data-en="An actionable blueprint — yours to keep, zero obligation" data-de="Ein umsetzbarer Plan — für Sie, ganz ohne Verpflichtung">An actionable blueprint — yours to keep, zero obligation</span></li>
+            <li><span class="ck">→</span><span data-en="30-minute online consultation" data-de="30-minütige Online-Beratung">30-minute online consultation</span></li>
+            <li><span class="ck">→</span><span data-en="Automatic confirmation and calendar invitation" data-de="Automatische Bestätigung und Kalendereinladung">Automatic confirmation and calendar invitation</span></li>
+            <li><span class="ck">→</span><span data-en="Your local time zone is detected automatically" data-de="Ihre lokale Zeitzone wird automatisch erkannt">Your local time zone is detected automatically</span></li>
+            <li><span class="ck">→</span><span data-en="No sales pressure and no obligation" data-de="Kein Verkaufsdruck und keine Verpflichtung">No sales pressure and no obligation</span></li>
           </ul>
         </div>
-        <div class="form-panel">
-          <form id="auditForm">
-            <div class="field-row">
-              <div class="field"><label data-en="Name" data-de="Name">Name</label><input id="fname" type="text" required data-en-ph="Full name" data-de-ph="Vor- und Nachname" placeholder="Full name"></div>
-              <div class="field"><label data-en="Company Name" data-de="Unternehmen">Company Name</label><input id="fcompany" type="text" required data-en-ph="Your company" data-de-ph="Firmenname" placeholder="Your company"></div>
-            </div>
-            <div class="field">
-              <label data-en="Current Biggest Tech/Admin Pain Point" data-de="Größte aktuelle Herausforderung">Current Biggest Tech/Admin Pain Point</label>
-              <select id="fpain" required>
-                <option value="" data-en="Select one..." data-de="Bitte wählen...">Select one...</option>
-                <option data-en="Outdated Website" data-de="Veraltete Webseite">Outdated Website</option>
-                <option data-en="Manual Data Entry" data-de="Manuelle Dateneingabe">Manual Data Entry</option>
-                <option data-en="Disconnected Software" data-de="Getrennte Software-Tools">Disconnected Software</option>
-                <option data-en="Low Visibility / SEO" data-de="Geringe Sichtbarkeit / SEO">Low Visibility / SEO</option>
-                <option data-en="Other" data-de="Sonstiges">Other</option>
-              </select>
-            </div>
-            <div class="field"><label data-en="Email Address" data-de="E-Mail-Adresse">Email Address</label><input id="femail" type="email" required data-en-ph="name@company.com" data-de-ph="name@firma.de" placeholder="name@company.com"></div>
-            <div class="field">
-              <label data-en="Preferred Slot (optional)" data-de="Wunschtermin (optional)">Preferred Slot (optional)</label>
-              <div class="slot-grid">
-                <div class="slot" data-en-slot="Tue 14.07 · 10:00" data-de-slot="Di 14.07 · 10:00">Tue 10:00</div>
-                <div class="slot" data-en-slot="Wed 15.07 · 14:00" data-de-slot="Mi 15.07 · 14:00">Wed 14:00</div>
-                <div class="slot" data-en-slot="Thu 16.07 · 11:00" data-de-slot="Do 16.07 · 11:00">Thu 11:00</div>
-              </div>
-            </div>
-            <button type="submit" class="submit-btn" data-en="Secure My Audit →" data-de="Audit jetzt sichern →">Secure My Audit →</button>
-            <div class="form-note" data-en="No sales pressure. No obligation. Response within 24 hours." data-de="Kein Verkaufsdruck. Keine Verpflichtung. Antwort innerhalb von 24 Stunden.">No sales pressure. No obligation. Response within 24 hours.</div>
-          </form>
-          <div class="confirm" id="confirmBox">
-            <div class="check">✓</div>
-            <h4 data-en="Audit request received." data-de="Anfrage erhalten.">Audit request received.</h4>
-            <p id="confirmText" data-en="We'll confirm your slot by email within 24 hours." data-de="Wir bestätigen Ihren Termin per E-Mail innerhalb von 24 Stunden.">We'll confirm your slot by email within 24 hours.</p>
+        <div class="cal-panel bracket">
+          <div class="cal-panel-head">
+            <h3 data-en="Free Business Consultation" data-de="Kostenlose Unternehmensberatung">Free Business Consultation</h3>
+            <span class="cal-panel-meta" data-en="30 MIN · ONLINE · FREE" data-de="30 MIN · ONLINE · KOSTENLOS">30 MIN · ONLINE · FREE</span>
+          </div>
+          <div
+            class="cal-inline"
+            data-cal-namespace="qevilo-consultation"
+            data-cal-link="qevilo/30min"
+            data-cal-config='{"layout":"month_view"}'>
           </div>
         </div>
       </div>
@@ -482,6 +459,55 @@ footer{border-top:1px solid var(--line);padding:36px 0 26px;}
     </div>
   </div>
 </footer>
+
+<script>
+(function (C, A, L) {
+  var p = function (a, ar) { a.q.push(ar); };
+  var d = C.document;
+  C.Cal = C.Cal || function () {
+    var cal = C.Cal;
+    var ar = arguments;
+    if (!cal.loaded) {
+      cal.ns = {};
+      cal.q = cal.q || [];
+      d.head.appendChild(d.createElement("script")).src = A;
+      cal.loaded = true;
+    }
+    if (ar[0] === L) {
+      var api = function () { p(api, arguments); };
+      var namespace = ar[1];
+      api.q = api.q || [];
+      if (typeof namespace === "string") {
+        cal.ns[namespace] = cal.ns[namespace] || api;
+        p(cal.ns[namespace], ar);
+        p(cal, ["initNamespace", namespace]);
+      } else {
+        p(cal, ar);
+      }
+      return;
+    }
+    p(cal, ar);
+  };
+})(window, "https://app.cal.eu/embed/embed.js", "init");
+
+Cal("init", "qevilo-consultation", {origin: "https://app.cal.eu"});
+
+Cal.ns["qevilo-consultation"]("inline", {
+  elementOrSelector: ".cal-inline",
+  config: {"layout": "month_view"},
+  calLink: "qevilo/30min"
+});
+
+Cal.ns["qevilo-consultation"]("ui", {
+  hideEventTypeDetails: false,
+  layout: "month_view",
+  styles: {
+    branding: {
+      brandColor: "#0E6B72"
+    }
+  }
+});
+</script>
 
 <script>
 var currentLang = 'en';
@@ -521,37 +547,6 @@ document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('.lang-btn').forEach(function(b){
     b.addEventListener('click', function(){ applyLang(b.dataset.lang); });
   });
-
-  document.querySelectorAll('.slot').forEach(function(s){
-    s.addEventListener('click', function(){
-      document.querySelectorAll('.slot').forEach(function(x){x.classList.remove('active');});
-      s.classList.add('active');
-    });
-  });
-
-  var auditForm = document.getElementById('auditForm');
-  if(auditForm){
-    auditForm.addEventListener('submit', function(e){
-      e.preventDefault();
-      var active = document.querySelector('.slot.active');
-      var nameField = document.getElementById('fname');
-      var name = (nameField && nameField.value) || (currentLang === 'de' ? 'dort' : 'there');
-      var firstName = name.split(' ')[0];
-      var confirmText = document.getElementById('confirmText');
-      var slotLabel = active ? active.getAttribute('data-' + currentLang + '-slot') : null;
-      if(currentLang === 'de'){
-        confirmText.textContent = slotLabel
-          ? 'Wir bestätigen Ihr Audit am ' + slotLabel + ' per E-Mail innerhalb von 24 Stunden, ' + firstName + '.'
-          : 'Wir melden uns innerhalb von 24 Stunden, um einen passenden Termin zu finden, ' + firstName + '.';
-      } else {
-        confirmText.textContent = slotLabel
-          ? 'We\'ll confirm your audit for ' + slotLabel + ' by email within 24 hours, ' + firstName + '.'
-          : 'We\'ll reach out within 24 hours to find a time that works, ' + firstName + '.';
-      }
-      this.style.display = 'none';
-      document.getElementById('confirmBox').classList.add('show');
-    });
-  }
 
   var notifyForm = document.getElementById('notifyForm');
   if(notifyForm){
